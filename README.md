@@ -1,3 +1,3 @@
 # pascal2mips_compiler
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.jpg)
