@@ -1,3 +1,3 @@
 # pascal2mips_compiler
 
-![Screenshot](RapportCompil-page-001.png)
+![RapportCompil-page-001](RapportCompil-page-001.png)
