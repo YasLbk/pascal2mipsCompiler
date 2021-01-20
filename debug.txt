@@ -1,0 +1,1379 @@
+/bin/rm scalpa y.tab.c y.tab.h lex.yy.c tests/*.asm
+yacc -d  scalpa.y
+lex scalpa.l
+gcc -o scalpa src/quad.c src/fct_utilitaires.c src/mipssy.c src/function.c src/token_tab.c src/array.c y.tab.c lex.yy.c -lm -lfl 
+[1;33mRunning compiler on all test files found in the /tests [0m
+
+[1;33mRunning tests/MIPS_arith.txt (tests/MIPS_arith.asm)...[0m
+Enter your code:
+Analyseur lexical:	program
+Analyseur lexical:	maxi
+Analyseur lexical:	var
+Analyseur lexical:	i
+Analyseur lexical:	,
+Analyseur lexical:	j
+Analyseur lexical:	,
+Analyseur lexical:	max
+Analyseur lexical:	:
+Analyseur lexical:	int
+hash table case was empty, symb i added
+hash table case was empty, symb j added
+hash table case was empty, symb max added
+Analyseur lexical:	;
+Analyseur lexical:	begin
+Analyseur lexical:	j
+Analyseur lexical:	:=
+Analyseur lexical:	22
+Analyseur lexical:	;
+Analyseur lexical:	i
+Analyseur lexical:	:=
+Analyseur lexical:	j
+Analyseur lexical:	+
+Analyseur lexical:	18
+hash table case was empty, symb t0 added
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	i
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	\n
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	i
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	\n
+Analyseur lexical:	;
+Analyseur lexical:	i
+Analyseur lexical:	:=
+Analyseur lexical:	j
+Analyseur lexical:	*
+Analyseur lexical:	4
+hash table case was empty, symb t1 added
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	i
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	\n
+Analyseur lexical:	;
+Analyseur lexical:	i
+Analyseur lexical:	:=
+Analyseur lexical:	max
+Analyseur lexical:	+
+Analyseur lexical:	1
+hash table case was empty, symb t2 added
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	i
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	\n
+Analyseur lexical:	;
+Analyseur lexical:	end
+-----------------
+Symbol table:
+-----------------
+|---------------|-------------------------------|--------|---------|------------|
+|	index	|		ident		| idtype | rettype |	value	|
+|---------------|-------------------------------|--------|---------|------------|
+|	105	|		i		|   var  |   int   |	  1 	|
+|	106	|		j		|   var  |   int   |	  22 	|
+|	164	|		t0		|   var  |   int   |	  40 	|
+|	165	|		t1		|   var  |   int   |	  88 	|
+|	166	|		t2		|   var  |   int   |	  1 	|
+|	326	|		max		|   var  |   int   |	  0 	|
+|---------------|-------------------------------|--------|---------|------------|
+-----------------
+Symbol integer:
+-----------------
+i
+j
+t0
+t1
+t2
+max
+-----------------
+Quad List:
+-----------------
+0 goto 1
+1 j = 22
+2 t0 = j + 18
+3 i = t0
+4 write i
+5 write \n
+6 write i
+7 write \n
+8 t1 = j * 4
+9 i = t1
+10 write i
+11 write \n
+12 t2 = max + 1
+13 i = t2
+14 write i
+15 write \n
+[1;33mRunning tests/MIPS_array_1d.txt (tests/MIPS_array_1d.asm)...[0m
+Enter your code:
+Analyseur lexical:	program
+Analyseur lexical:	maxi
+Analyseur lexical:	var
+Analyseur lexical:	i
+Analyseur lexical:	,
+Analyseur lexical:	j
+Analyseur lexical:	:
+Analyseur lexical:	int
+hash table case was empty, symb i added
+hash table case was empty, symb j added
+Analyseur lexical:	;
+Analyseur lexical:	var
+Analyseur lexical:	tableau
+Analyseur lexical:	:
+Analyseur lexical:	array
+Analyseur lexical:	[
+Analyseur lexical:	-5
+Analyseur lexical:	3
+Analyseur lexical:	]
+Analyseur lexical:	of
+Analyseur lexical:	int
+dim : -5 3 
+hash table case was empty, symb tableau added
+Analyseur lexical:	;
+Analyseur lexical:	begin
+Analyseur lexical:	i
+Analyseur lexical:	:=
+Analyseur lexical:	2
+Analyseur lexical:	;
+Analyseur lexical:	read
+Analyseur lexical:	tableau
+Analyseur lexical:	[
+Analyseur lexical:	2
+Analyseur lexical:	]
+found tab
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	tableau
+Analyseur lexical:	[
+Analyseur lexical:	i
+Analyseur lexical:	]
+found tab
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	\n
+Analyseur lexical:	;
+Analyseur lexical:	read
+Analyseur lexical:	tableau
+Analyseur lexical:	[
+Analyseur lexical:	-3
+Analyseur lexical:	]
+found tab
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	tableau
+Analyseur lexical:	[
+Analyseur lexical:	-3
+Analyseur lexical:	]
+found tab
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	\n
+Analyseur lexical:	;
+Analyseur lexical:	read
+Analyseur lexical:	tableau
+Analyseur lexical:	[
+Analyseur lexical:	3
+Analyseur lexical:	]
+found tab
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	tableau
+Analyseur lexical:	[
+Analyseur lexical:	3
+Analyseur lexical:	]
+found tab
+Analyseur lexical:	;
+Analyseur lexical:	end
+-----------------
+Symbol table:
+-----------------
+|---------------|-------------------------------|--------|---------|------------|
+|	index	|		ident		| idtype | rettype |	value	|
+|---------------|-------------------------------|--------|---------|------------|
+|	105	|		i		|   var  |   int   |	  2 	|
+|	106	|		j		|   var  |   int   |	  0 	|
+|	734	|		tableau		|   arr  |   int   |		|
+|---------------|-------------------------------|--------|---------|------------|
+-----------------
+Symbol integer:
+-----------------
+i
+j
+tableau
+-----------------
+Quad List:
+-----------------
+0 goto 1
+1 i = 2
+2 read tableau[2]
+3 write tableau[i]
+4 write \n
+5 read tableau[-3]
+6 write tableau[-3]
+7 write \n
+8 read tableau[3]
+9 write tableau[3]
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+[1;33mRunning tests/MIPS_array_1d_negative.txt (tests/MIPS_array_1d_negative.asm)...[0m
+Enter your code:
+Analyseur lexical:	program
+Analyseur lexical:	maxi
+Analyseur lexical:	var
+Analyseur lexical:	i
+Analyseur lexical:	,
+Analyseur lexical:	j
+Analyseur lexical:	:
+Analyseur lexical:	int
+hash table case was empty, symb i added
+hash table case was empty, symb j added
+Analyseur lexical:	;
+Analyseur lexical:	var
+Analyseur lexical:	tableau
+Analyseur lexical:	:
+Analyseur lexical:	array
+Analyseur lexical:	[
+Analyseur lexical:	-3
+Analyseur lexical:	3
+Analyseur lexical:	]
+Analyseur lexical:	of
+Analyseur lexical:	int
+dim : -3 3 
+hash table case was empty, symb tableau added
+Analyseur lexical:	;
+Analyseur lexical:	begin
+Analyseur lexical:	write
+Analyseur lexical:	tableau
+Analyseur lexical:	[
+Analyseur lexical:	0
+Analyseur lexical:	]
+found tab
+Analyseur lexical:	;
+Analyseur lexical:	end
+-----------------
+Symbol table:
+-----------------
+|---------------|-------------------------------|--------|---------|------------|
+|	index	|		ident		| idtype | rettype |	value	|
+|---------------|-------------------------------|--------|---------|------------|
+|	105	|		i		|   var  |   int   |	  0 	|
+|	106	|		j		|   var  |   int   |	  0 	|
+|	734	|		tableau		|   arr  |   int   |		|
+|---------------|-------------------------------|--------|---------|------------|
+-----------------
+Symbol integer:
+-----------------
+i
+j
+tableau
+-----------------
+Quad List:
+-----------------
+0 goto 1
+1 write tableau[0]
+found tab
+found tab
+[1;33mRunning tests/MIPS_array_2d.txt (tests/MIPS_array_2d.asm)...[0m
+Enter your code:
+Analyseur lexical:	program
+Analyseur lexical:	maxi
+Analyseur lexical:	var
+Analyseur lexical:	i
+Analyseur lexical:	,
+Analyseur lexical:	j
+Analyseur lexical:	:
+Analyseur lexical:	int
+hash table case was empty, symb i added
+hash table case was empty, symb j added
+Analyseur lexical:	;
+Analyseur lexical:	var
+Analyseur lexical:	tableau
+Analyseur lexical:	:
+Analyseur lexical:	array
+Analyseur lexical:	[
+Analyseur lexical:	0
+Analyseur lexical:	12
+Analyseur lexical:	,
+Analyseur lexical:	0
+Analyseur lexical:	15
+Analyseur lexical:	]
+Analyseur lexical:	of
+Analyseur lexical:	int
+dim : 0 15 
+dim : 0 12 
+hash table case was empty, symb tableau added
+Analyseur lexical:	;
+Analyseur lexical:	begin
+Analyseur lexical:	i
+Analyseur lexical:	:=
+Analyseur lexical:	2
+Analyseur lexical:	;
+Analyseur lexical:	j
+Analyseur lexical:	:=
+Analyseur lexical:	4
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	hello
+Analyseur lexical:	write
+Analyseur lexical:	tableau
+Analyseur lexical:	[
+Analyseur lexical:	i
+Analyseur lexical:	,
+Analyseur lexical:	j
+Analyseur lexical:	]
+found tab
+Analyseur lexical:	;
+Analyseur lexical:	read
+Analyseur lexical:	tableau
+Analyseur lexical:	[
+Analyseur lexical:	i
+Analyseur lexical:	,
+Analyseur lexical:	4
+Analyseur lexical:	]
+found tab
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	stfw
+Analyseur lexical:	write
+Analyseur lexical:	tableau
+Analyseur lexical:	[
+Analyseur lexical:	2
+Analyseur lexical:	,
+Analyseur lexical:	j
+Analyseur lexical:	]
+found tab
+Analyseur lexical:	;
+Analyseur lexical:	end
+-----------------
+Symbol table:
+-----------------
+|---------------|-------------------------------|--------|---------|------------|
+|	index	|		ident		| idtype | rettype |	value	|
+|---------------|-------------------------------|--------|---------|------------|
+|	105	|		i		|   var  |   int   |	  2 	|
+|	106	|		j		|   var  |   int   |	  4 	|
+|	734	|		tableau		|   arr  |   int   |		|
+|---------------|-------------------------------|--------|---------|------------|
+-----------------
+Symbol integer:
+-----------------
+i
+j
+tableau
+-----------------
+Quad List:
+-----------------
+0 goto 1
+1 i = 2
+2 j = 4
+3 write hello
+4 write tableau[i][j]
+5 read tableau[i][4]
+6 write stfw
+7 write tableau[2][j]
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+[1;33mRunning tests/MIPS_array_neg.txt (tests/MIPS_array_neg.asm)...[0m
+Enter your code:
+Analyseur lexical:	program
+Analyseur lexical:	maxi
+Analyseur lexical:	var
+Analyseur lexical:	i
+Analyseur lexical:	,
+Analyseur lexical:	j
+Analyseur lexical:	:
+Analyseur lexical:	int
+hash table case was empty, symb i added
+hash table case was empty, symb j added
+Analyseur lexical:	;
+Analyseur lexical:	var
+Analyseur lexical:	tableau
+Analyseur lexical:	:
+Analyseur lexical:	array
+Analyseur lexical:	[
+Analyseur lexical:	-3
+Analyseur lexical:	3
+Analyseur lexical:	,
+Analyseur lexical:	-2
+Analyseur lexical:	2
+Analyseur lexical:	]
+Analyseur lexical:	of
+Analyseur lexical:	int
+dim : -2 2 
+dim : -3 3 
+hash table case was empty, symb tableau added
+Analyseur lexical:	;
+Analyseur lexical:	begin
+Analyseur lexical:	write
+Analyseur lexical:	tableau
+Analyseur lexical:	[
+Analyseur lexical:	0
+Analyseur lexical:	,
+Analyseur lexical:	0
+Analyseur lexical:	]
+found tab
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	\n
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	tableau
+Analyseur lexical:	[
+Analyseur lexical:	-2
+Analyseur lexical:	,
+Analyseur lexical:	0
+Analyseur lexical:	]
+found tab
+Analyseur lexical:	;
+Analyseur lexical:	end
+-----------------
+Symbol table:
+-----------------
+|---------------|-------------------------------|--------|---------|------------|
+|	index	|		ident		| idtype | rettype |	value	|
+|---------------|-------------------------------|--------|---------|------------|
+|	105	|		i		|   var  |   int   |	  0 	|
+|	106	|		j		|   var  |   int   |	  0 	|
+|	734	|		tableau		|   arr  |   int   |		|
+|---------------|-------------------------------|--------|---------|------------|
+-----------------
+Symbol integer:
+-----------------
+i
+j
+tableau
+-----------------
+Quad List:
+-----------------
+0 goto 1
+1 write tableau[0][0]
+2 write \n
+3 write tableau[-2][0]
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+[1;33mRunning tests/MIPS_array_prof.txt (tests/MIPS_array_prof.asm)...[0m
+Enter your code:
+Analyseur lexical:	program
+Analyseur lexical:	maxi
+Analyseur lexical:	var
+Analyseur lexical:	i
+Analyseur lexical:	,
+Analyseur lexical:	j
+Analyseur lexical:	:
+Analyseur lexical:	int
+hash table case was empty, symb i added
+hash table case was empty, symb j added
+Analyseur lexical:	;
+Analyseur lexical:	var
+Analyseur lexical:	tableau
+Analyseur lexical:	:
+Analyseur lexical:	array
+Analyseur lexical:	[
+Analyseur lexical:	-1
+Analyseur lexical:	1
+Analyseur lexical:	,
+Analyseur lexical:	-2
+Analyseur lexical:	2
+Analyseur lexical:	]
+Analyseur lexical:	of
+Analyseur lexical:	int
+dim : -2 2 
+dim : -1 1 
+hash table case was empty, symb tableau added
+Analyseur lexical:	;
+Analyseur lexical:	begin
+Analyseur lexical:	read
+Analyseur lexical:	tableau
+Analyseur lexical:	[
+Analyseur lexical:	0
+Analyseur lexical:	,
+Analyseur lexical:	0
+Analyseur lexical:	]
+found tab
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	tableau
+Analyseur lexical:	[
+Analyseur lexical:	0
+Analyseur lexical:	,
+Analyseur lexical:	0
+Analyseur lexical:	]
+found tab
+Analyseur lexical:	;
+Analyseur lexical:	i
+Analyseur lexical:	:=
+Analyseur lexical:	-1
+Analyseur lexical:	;
+Analyseur lexical:	j
+Analyseur lexical:	:=
+Analyseur lexical:	-2
+Analyseur lexical:	;
+Analyseur lexical:	while
+Analyseur lexical:	i
+Analyseur lexical:	<=
+Analyseur lexical:	1
+Analyseur lexical:	do
+Analyseur lexical:	begin
+Analyseur lexical:	j
+Analyseur lexical:	:=
+Analyseur lexical:	-2
+Analyseur lexical:	;
+Analyseur lexical:	while
+Analyseur lexical:	j
+Analyseur lexical:	<=
+Analyseur lexical:	2
+Analyseur lexical:	do
+Analyseur lexical:	begin
+Analyseur lexical:	read
+Analyseur lexical:	tableau
+Analyseur lexical:	[
+Analyseur lexical:	i
+Analyseur lexical:	,
+Analyseur lexical:	j
+Analyseur lexical:	]
+found tab
+Analyseur lexical:	;
+Analyseur lexical:	j
+Analyseur lexical:	:=
+Analyseur lexical:	j
+Analyseur lexical:	+
+Analyseur lexical:	1
+hash table case was empty, symb t0 added
+Analyseur lexical:	;
+Analyseur lexical:	end
+Analyseur lexical:	;
+Analyseur lexical:	i
+Analyseur lexical:	:=
+Analyseur lexical:	i
+Analyseur lexical:	+
+Analyseur lexical:	1
+hash table case was empty, symb t1 added
+Analyseur lexical:	;
+Analyseur lexical:	end
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	tableau
+Analyseur lexical:	[
+Analyseur lexical:	1
+Analyseur lexical:	,
+Analyseur lexical:	2
+Analyseur lexical:	]
+found tab
+Analyseur lexical:	;
+Analyseur lexical:	end
+-----------------
+Symbol table:
+-----------------
+|---------------|-------------------------------|--------|---------|------------|
+|	index	|		ident		| idtype | rettype |	value	|
+|---------------|-------------------------------|--------|---------|------------|
+|	105	|		i		|   var  |   int   |	  0 	|
+|	106	|		j		|   var  |   int   |	  -1 	|
+|	164	|		t0		|   var  |   int   |	  -1 	|
+|	165	|		t1		|   var  |   int   |	  0 	|
+|	734	|		tableau		|   arr  |   int   |		|
+|---------------|-------------------------------|--------|---------|------------|
+-----------------
+Symbol integer:
+-----------------
+i
+j
+t0
+t1
+tableau
+-----------------
+Quad List:
+-----------------
+0 goto 1
+1 read tableau[0][0]
+2 write tableau[0][0]
+3 i = -1
+4 j = -2
+5 if i <= 1 goto 7
+6 goto 17
+7 j = -2
+8 if j <= 2 goto 10
+9 goto 14
+10 read tableau[i][j]
+11 t0 = j + 1
+12 j = t0
+13 goto 8
+14 t1 = i + 1
+15 i = t1
+16 goto 5
+17 write tableau[1][2]
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+found tab
+[1;33mRunning tests/MIPS_declaration_affectation.txt (tests/MIPS_declaration_affectation.asm)...[0m
+Enter your code:
+Analyseur lexical:	program
+Analyseur lexical:	maxi
+Analyseur lexical:	var
+Analyseur lexical:	i
+Analyseur lexical:	,
+Analyseur lexical:	j
+Analyseur lexical:	:
+Analyseur lexical:	int
+hash table case was empty, symb i added
+hash table case was empty, symb j added
+Analyseur lexical:	;
+Analyseur lexical:	begin
+Analyseur lexical:	i
+Analyseur lexical:	:=
+Analyseur lexical:	53
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	i
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	\n
+Analyseur lexical:	;
+Analyseur lexical:	j
+Analyseur lexical:	:=
+Analyseur lexical:	i
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	j
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	\n
+Analyseur lexical:	;
+Analyseur lexical:	j
+Analyseur lexical:	:=
+Analyseur lexical:	3
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	j
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	\n
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	i
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	\n
+Analyseur lexical:	;
+Analyseur lexical:	end
+-----------------
+Symbol table:
+-----------------
+|---------------|-------------------------------|--------|---------|------------|
+|	index	|		ident		| idtype | rettype |	value	|
+|---------------|-------------------------------|--------|---------|------------|
+|	105	|		i		|   var  |   int   |	  53 	|
+|	106	|		j		|   var  |   int   |	  3 	|
+|---------------|-------------------------------|--------|---------|------------|
+-----------------
+Symbol integer:
+-----------------
+i
+j
+-----------------
+Quad List:
+-----------------
+0 goto 1
+1 i = 53
+2 write i
+3 write \n
+4 j = i
+5 write j
+6 write \n
+7 j = 3
+8 write j
+9 write \n
+10 write i
+11 write \n
+[1;33mRunning tests/MIPS_fct.txt (tests/MIPS_fct.asm)...[0m
+Enter your code:
+Analyseur lexical:	program
+Analyseur lexical:	maxi
+Analyseur lexical:	function
+Analyseur lexical:	fini
+Analyseur lexical:	(
+Analyseur lexical:	)
+Analyseur lexical:	:
+Analyseur lexical:	unit
+hash table case was empty, symb fini added
+Analyseur lexical:	begin
+Analyseur lexical:	write
+Analyseur lexical:	Hello World\n
+Analyseur lexical:	;
+Analyseur lexical:	end
+Analyseur lexical:	;
+Analyseur lexical:	begin
+Analyseur lexical:	fini
+Analyseur lexical:	(
+Analyseur lexical:	)
+Analyseur lexical:	end
+-----------------
+Symbol table:
+-----------------
+|---------------|-------------------------------|--------|---------|------------|
+|	index	|		ident		| idtype | rettype |	value	|
+|---------------|-------------------------------|--------|---------|------------|
+|	422	|		fini		|   fun  |   unit  |		|
+|---------------|-------------------------------|--------|---------|------------|
+-----------------
+Symbol integer:
+-----------------
+-----------------
+Quad List:
+-----------------
+0 goto 4
+1 function fini,0 begin
+2 write Hello World\n
+3 function fini end
+4 call fini,0
+[1;33mRunning tests/MIPS_if_else.txt (tests/MIPS_if_else.asm)...[0m
+Enter your code:
+Analyseur lexical:	program
+Analyseur lexical:	maxi
+Analyseur lexical:	var
+Analyseur lexical:	max
+Analyseur lexical:	:
+Analyseur lexical:	int
+hash table case was empty, symb max added
+Analyseur lexical:	;
+Analyseur lexical:	begin
+Analyseur lexical:	if
+Analyseur lexical:	5
+Analyseur lexical:	>
+Analyseur lexical:	6
+Analyseur lexical:	then
+Analyseur lexical:	max
+Analyseur lexical:	:=
+Analyseur lexical:	1
+Analyseur lexical:	else
+Analyseur lexical:	max
+Analyseur lexical:	:=
+Analyseur lexical:	0
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	max
+Analyseur lexical:	;
+Analyseur lexical:	if
+Analyseur lexical:	5
+Analyseur lexical:	<
+Analyseur lexical:	6
+Analyseur lexical:	then
+Analyseur lexical:	write
+Analyseur lexical:	success
+Analyseur lexical:	else
+Analyseur lexical:	write
+Analyseur lexical:	fail
+Analyseur lexical:	;
+Analyseur lexical:	end
+-----------------
+Symbol table:
+-----------------
+|---------------|-------------------------------|--------|---------|------------|
+|	index	|		ident		| idtype | rettype |	value	|
+|---------------|-------------------------------|--------|---------|------------|
+|	326	|		max		|   var  |   int   |	  0 	|
+|---------------|-------------------------------|--------|---------|------------|
+-----------------
+Symbol integer:
+-----------------
+max
+-----------------
+Quad List:
+-----------------
+0 goto 1
+1 if 5 > 6 goto 3
+2 goto 5
+3 max = 1
+4 goto 7
+5 max = 0
+6 goto 7
+7 write max
+8 if 5 < 6 goto 10
+9 goto 12
+10 write success
+11 goto ?
+12 write fail
+13 goto ?
+[1;33mRunning tests/MIPS_if_else_AND.txt (tests/MIPS_if_else_AND.asm)...[0m
+Enter your code:
+Analyseur lexical:	program
+Analyseur lexical:	maxi
+Analyseur lexical:	var
+Analyseur lexical:	max
+Analyseur lexical:	:
+Analyseur lexical:	int
+hash table case was empty, symb max added
+Analyseur lexical:	;
+Analyseur lexical:	begin
+Analyseur lexical:	if
+Analyseur lexical:	(
+Analyseur lexical:	(
+Analyseur lexical:	5
+Analyseur lexical:	<
+Analyseur lexical:	6
+Analyseur lexical:	)
+Analyseur lexical:	(
+Analyseur lexical:	1
+Analyseur lexical:	=
+Analyseur lexical:	1
+Analyseur lexical:	)
+Analyseur lexical:	)
+Analyseur lexical:	then
+Analyseur lexical:	max
+Analyseur lexical:	:=
+Analyseur lexical:	1
+Analyseur lexical:	else
+Analyseur lexical:	max
+Analyseur lexical:	:=
+Analyseur lexical:	0
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	max
+Analyseur lexical:	;
+Analyseur lexical:	if
+Analyseur lexical:	(
+Analyseur lexical:	(
+Analyseur lexical:	5
+Analyseur lexical:	<
+Analyseur lexical:	6
+Analyseur lexical:	)
+Analyseur lexical:	(
+Analyseur lexical:	1
+Analyseur lexical:	=
+Analyseur lexical:	1
+Analyseur lexical:	)
+Analyseur lexical:	)
+Analyseur lexical:	then
+Analyseur lexical:	write
+Analyseur lexical:	success
+Analyseur lexical:	else
+Analyseur lexical:	write
+Analyseur lexical:	fail
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	\nje suis encore ici : bref nextquad marche
+Analyseur lexical:	;
+Analyseur lexical:	end
+-----------------
+Symbol table:
+-----------------
+|---------------|-------------------------------|--------|---------|------------|
+|	index	|		ident		| idtype | rettype |	value	|
+|---------------|-------------------------------|--------|---------|------------|
+|	326	|		max		|   var  |   int   |	  0 	|
+|---------------|-------------------------------|--------|---------|------------|
+-----------------
+Symbol integer:
+-----------------
+max
+-----------------
+Quad List:
+-----------------
+0 goto 1
+1 if 5 < 6 goto 3
+2 goto 7
+3 if 1 = 1 goto 5
+4 goto 7
+5 max = 1
+6 goto 9
+7 max = 0
+8 goto 9
+9 write max
+10 if 5 < 6 goto 12
+11 goto 16
+12 if 1 = 1 goto 14
+13 goto 16
+14 write success
+15 goto 18
+16 write fail
+17 goto 18
+18 write \nje suis encore ici : bref nextquad marche
+[1;33mRunning tests/MIPS_if_then_<.txt (tests/MIPS_if_then_<.asm)...[0m
+Enter your code:
+Analyseur lexical:	program
+Analyseur lexical:	maxi
+Analyseur lexical:	var
+Analyseur lexical:	i
+Analyseur lexical:	,
+Analyseur lexical:	j
+Analyseur lexical:	,
+Analyseur lexical:	max
+Analyseur lexical:	:
+Analyseur lexical:	int
+hash table case was empty, symb i added
+hash table case was empty, symb j added
+hash table case was empty, symb max added
+Analyseur lexical:	;
+Analyseur lexical:	begin
+Analyseur lexical:	i
+Analyseur lexical:	:=
+Analyseur lexical:	1
+Analyseur lexical:	;
+Analyseur lexical:	j
+Analyseur lexical:	:=
+Analyseur lexical:	2
+Analyseur lexical:	;
+Analyseur lexical:	if
+Analyseur lexical:	i
+Analyseur lexical:	<
+Analyseur lexical:	j
+Analyseur lexical:	then
+Analyseur lexical:	max
+Analyseur lexical:	:=
+Analyseur lexical:	j
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	max
+Analyseur lexical:	;
+Analyseur lexical:	end
+-----------------
+Symbol table:
+-----------------
+|---------------|-------------------------------|--------|---------|------------|
+|	index	|		ident		| idtype | rettype |	value	|
+|---------------|-------------------------------|--------|---------|------------|
+|	105	|		i		|   var  |   int   |	  1 	|
+|	106	|		j		|   var  |   int   |	  2 	|
+|	326	|		max		|   var  |   int   |	  2 	|
+|---------------|-------------------------------|--------|---------|------------|
+-----------------
+Symbol integer:
+-----------------
+i
+j
+max
+-----------------
+Quad List:
+-----------------
+0 goto 1
+1 i = 1
+2 j = 2
+3 if i < j goto 5
+4 goto 6
+5 max = j
+6 write max
+[1;33mRunning tests/MIPS_if_then_>.txt (tests/MIPS_if_then_>.asm)...[0m
+Enter your code:
+Analyseur lexical:	program
+Analyseur lexical:	maxi
+Analyseur lexical:	var
+Analyseur lexical:	i
+Analyseur lexical:	,
+Analyseur lexical:	j
+Analyseur lexical:	,
+Analyseur lexical:	max
+Analyseur lexical:	:
+Analyseur lexical:	int
+hash table case was empty, symb i added
+hash table case was empty, symb j added
+hash table case was empty, symb max added
+Analyseur lexical:	;
+Analyseur lexical:	begin
+Analyseur lexical:	i
+Analyseur lexical:	:=
+Analyseur lexical:	1
+Analyseur lexical:	;
+Analyseur lexical:	j
+Analyseur lexical:	:=
+Analyseur lexical:	2
+Analyseur lexical:	;
+Analyseur lexical:	if
+Analyseur lexical:	i
+Analyseur lexical:	>
+Analyseur lexical:	j
+Analyseur lexical:	then
+Analyseur lexical:	max
+Analyseur lexical:	:=
+Analyseur lexical:	j
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	max
+Analyseur lexical:	;
+Analyseur lexical:	if
+Analyseur lexical:	i
+Analyseur lexical:	<
+Analyseur lexical:	j
+Analyseur lexical:	then
+Analyseur lexical:	max
+Analyseur lexical:	:=
+Analyseur lexical:	j
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	max
+Analyseur lexical:	;
+Analyseur lexical:	end
+-----------------
+Symbol table:
+-----------------
+|---------------|-------------------------------|--------|---------|------------|
+|	index	|		ident		| idtype | rettype |	value	|
+|---------------|-------------------------------|--------|---------|------------|
+|	105	|		i		|   var  |   int   |	  1 	|
+|	106	|		j		|   var  |   int   |	  2 	|
+|	326	|		max		|   var  |   int   |	  2 	|
+|---------------|-------------------------------|--------|---------|------------|
+-----------------
+Symbol integer:
+-----------------
+i
+j
+max
+-----------------
+Quad List:
+-----------------
+0 goto 1
+1 i = 1
+2 j = 2
+3 if i > j goto 5
+4 goto 6
+5 max = j
+6 write max
+7 if i < j goto 9
+8 goto 10
+9 max = j
+10 write max
+[1;33mRunning tests/MIPS_read_write.txt (tests/MIPS_read_write.asm)...[0m
+Enter your code:
+Analyseur lexical:	program
+Analyseur lexical:	maxi
+Analyseur lexical:	var
+Analyseur lexical:	i
+Analyseur lexical:	:
+Analyseur lexical:	int
+hash table case was empty, symb i added
+Analyseur lexical:	;
+Analyseur lexical:	begin
+Analyseur lexical:	write
+Analyseur lexical:	Enter integer\n
+Analyseur lexical:	;
+Analyseur lexical:	read
+Analyseur lexical:	i
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	i
+Analyseur lexical:	;
+Analyseur lexical:	end
+-----------------
+Symbol table:
+-----------------
+|---------------|-------------------------------|--------|---------|------------|
+|	index	|		ident		| idtype | rettype |	value	|
+|---------------|-------------------------------|--------|---------|------------|
+|	105	|		i		|   var  |   int   |	  0 	|
+|---------------|-------------------------------|--------|---------|------------|
+-----------------
+Symbol integer:
+-----------------
+i
+-----------------
+Quad List:
+-----------------
+0 goto 1
+1 write Enter integer\n
+2 read i
+3 write i
+[1;33mRunning tests/MIPS_while.txt (tests/MIPS_while.asm)...[0m
+Enter your code:
+Analyseur lexical:	program
+Analyseur lexical:	maxi
+Analyseur lexical:	var
+Analyseur lexical:	a
+Analyseur lexical:	:
+Analyseur lexical:	int
+hash table case was empty, symb a added
+Analyseur lexical:	;
+Analyseur lexical:	begin
+Analyseur lexical:	while
+Analyseur lexical:	a
+Analyseur lexical:	<
+Analyseur lexical:	3
+Analyseur lexical:	do
+Analyseur lexical:	begin
+Analyseur lexical:	a
+Analyseur lexical:	:=
+Analyseur lexical:	a
+Analyseur lexical:	+
+Analyseur lexical:	1
+hash table case was empty, symb t0 added
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	Hello
+Analyseur lexical:	;
+Analyseur lexical:	end
+Analyseur lexical:	;
+Analyseur lexical:	a
+Analyseur lexical:	:=
+Analyseur lexical:	9
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	a
+Analyseur lexical:	;
+Analyseur lexical:	a
+Analyseur lexical:	:=
+Analyseur lexical:	6
+Analyseur lexical:	;
+Analyseur lexical:	end
+-----------------
+Symbol table:
+-----------------
+|---------------|-------------------------------|--------|---------|------------|
+|	index	|		ident		| idtype | rettype |	value	|
+|---------------|-------------------------------|--------|---------|------------|
+|	97	|		a		|   var  |   int   |	  6 	|
+|	164	|		t0		|   var  |   int   |	  1 	|
+|---------------|-------------------------------|--------|---------|------------|
+-----------------
+Symbol integer:
+-----------------
+a
+t0
+-----------------
+Quad List:
+-----------------
+0 goto 1
+1 if a < 3 goto 3
+2 goto 7
+3 t0 = a + 1
+4 a = t0
+5 write Hello
+6 goto 1
+7 a = 9
+8 write a
+9 a = 6
+[1;33mRunning tests/MIPS_write_string.txt (tests/MIPS_write_string.asm)...[0m
+Enter your code:
+Analyseur lexical:	program
+Analyseur lexical:	maxi
+Analyseur lexical:	begin
+Analyseur lexical:	write
+Analyseur lexical:	Hello World\n
+Analyseur lexical:	;
+Analyseur lexical:	end
+-----------------
+Symbol table:
+-----------------
+|---------------|-------------------------------|--------|---------|------------|
+|	index	|		ident		| idtype | rettype |	value	|
+|---------------|-------------------------------|--------|---------|------------|
+|---------------|-------------------------------|--------|---------|------------|
+-----------------
+Symbol integer:
+-----------------
+-----------------
+Quad List:
+-----------------
+0 goto 1
+1 write Hello World\n
+[1;33mRunning tests/fct1.txt (tests/fct1.asm)...[0m
+Enter your code:
+Analyseur lexical:	program
+Analyseur lexical:	maxi
+Analyseur lexical:	var
+Analyseur lexical:	i
+Analyseur lexical:	,
+Analyseur lexical:	j
+Analyseur lexical:	,
+Analyseur lexical:	max
+Analyseur lexical:	:
+Analyseur lexical:	int
+hash table case was empty, symb i added
+hash table case was empty, symb j added
+hash table case was empty, symb max added
+Analyseur lexical:	;
+Analyseur lexical:	function
+Analyseur lexical:	appel_1
+Analyseur lexical:	(
+Analyseur lexical:	)
+Analyseur lexical:	:
+Analyseur lexical:	unit
+hash table case was empty, symb appel_1 added
+Analyseur lexical:	begin
+Analyseur lexical:	write
+Analyseur lexical:	premier appel de fonction
+Analyseur lexical:	write
+Analyseur lexical:	\n
+Analyseur lexical:	end
+Analyseur lexical:	;
+Analyseur lexical:	function
+Analyseur lexical:	bjr
+Analyseur lexical:	(
+Analyseur lexical:	)
+Analyseur lexical:	:
+Analyseur lexical:	unit
+hash table case was empty, symb bjr added
+Analyseur lexical:	begin
+Analyseur lexical:	write
+Analyseur lexical:	Hello
+Analyseur lexical:	end
+Analyseur lexical:	;
+Analyseur lexical:	function
+Analyseur lexical:	fini
+Analyseur lexical:	(
+Analyseur lexical:	)
+Analyseur lexical:	:
+Analyseur lexical:	unit
+hash table case was empty, symb fini added
+Analyseur lexical:	begin
+Analyseur lexical:	write
+Analyseur lexical:	programme vraiment terminé
+Analyseur lexical:	write
+Analyseur lexical:	\n
+Analyseur lexical:	end
+Analyseur lexical:	;
+Analyseur lexical:	function
+Analyseur lexical:	WORLD
+Analyseur lexical:	(
+Analyseur lexical:	)
+Analyseur lexical:	:
+Analyseur lexical:	unit
+hash table case was empty, symb WORLD added
+Analyseur lexical:	begin
+Analyseur lexical:	write
+Analyseur lexical:	 World
+Analyseur lexical:	write
+Analyseur lexical:	\n
+Analyseur lexical:	end
+Analyseur lexical:	;
+Analyseur lexical:	begin
+Analyseur lexical:	i
+Analyseur lexical:	:=
+Analyseur lexical:	4
+Analyseur lexical:	;
+Analyseur lexical:	j
+Analyseur lexical:	:=
+Analyseur lexical:	0
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	i
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	j
+Analyseur lexical:	;
+Analyseur lexical:	write
+Analyseur lexical:	\n
+Analyseur lexical:	;
+Analyseur lexical:	appel_1
+Analyseur lexical:	(
+Analyseur lexical:	)
+Analyseur lexical:	bjr
+Analyseur lexical:	(
+Analyseur lexical:	)
+Analyseur lexical:	WORLD
+Analyseur lexical:	(
+Analyseur lexical:	)
+Analyseur lexical:	fini
+Analyseur lexical:	(
+Analyseur lexical:	)
+Analyseur lexical:	end
+-----------------
+Symbol table:
+-----------------
+|---------------|-------------------------------|--------|---------|------------|
+|	index	|		ident		| idtype | rettype |	value	|
+|---------------|-------------------------------|--------|---------|------------|
+|	105	|		i		|   var  |   int   |	  4 	|
+|	106	|		j		|   var  |   int   |	  0 	|
+|	318	|		bjr		|   fun  |   unit  |		|
+|	326	|		max		|   var  |   int   |	  0 	|
+|	392	|		WORLD		|   fun  |   unit  |		|
+|	422	|		fini		|   fun  |   unit  |		|
+|	674	|		appel_1		|   fun  |   unit  |		|
+|---------------|-------------------------------|--------|---------|------------|
+-----------------
+Symbol integer:
+-----------------
+i
+j
+max
+-----------------
+Quad List:
+-----------------
+0 goto 16
+1 function appel_1,0 begin
+2 write premier appel de fonction
+3 write \n
+4 function appel_1 end
+5 function bjr,0 begin
+6 write Hello
+7 function bjr end
+8 function fini,0 begin
+9 write programme vraiment terminé
+10 write \n
+11 function fini end
+12 function WORLD,0 begin
+13 write  World
+14 write \n
+15 function WORLD end
+16 i = 4
+17 j = 0
+18 write i
+19 write j
+20 write \n
+21 call appel_1,0
+22 call bjr,0
+23 call WORLD,0
+24 call fini,0
+
+[1;36m*******************************
+16 tests out of 16 have succeeded.
+SUCCESS YOUPI !!!!!
+***************************************
