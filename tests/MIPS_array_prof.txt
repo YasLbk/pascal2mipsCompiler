@@ -1,0 +1,20 @@
+program maxi 
+var i, j : int ;
+var tableau : array [-1 .. 1, -2..2] of int ;
+begin
+read tableau[0,0];
+write tableau[0,0];
+i := -1;
+j := -2;
+while i <= 1 do
+begin
+	j := -2;
+	while j <= 2 do
+	begin
+		read tableau[i,j];
+		j := j+1 ;
+	end;
+	i := i+1 ;
+end;
+write tableau[1,2];
+end
